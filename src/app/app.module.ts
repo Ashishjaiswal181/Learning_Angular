@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { ReadyComponent } from './ready/ready.component';
-
+import { ServiceLoginService } from './service-login.service';
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +15,7 @@ import { ReadyComponent } from './ready/ready.component';
     ReadyComponent
   ],
   imports: [
-    BrowserModule,FormsModule,RouterModule.forRoot([
+    BrowserModule,FormsModule,HttpModule,RouterModule.forRoot([
       {
          path: 'login/Ashish',
          component: HomeComponent
@@ -24,7 +25,7 @@ import { ReadyComponent } from './ready/ready.component';
         component: AppComponent
      }
    ])],
-  providers: [],
+  providers: [ServiceLoginService],
   bootstrap: [ReadyComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-
+import { ServiceLoginService } from './service-login.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name="";
+  uname="";
   pass="";
   alrt;
   phone="";
@@ -14,10 +14,11 @@ export class AppComponent {
   gender;
   opt;
   drop=["Java", "Python","R", "Data Analytics", "Machine Learning"];
+  constructor(private data: ServiceLoginService){}
   username(){
-  if(this.name=="")
+  if(this.uname=="")
   {
-    this.alrt="*username is empty";
+    this.alrt="*username is empty"; 
   }
   else
   {
@@ -66,5 +67,8 @@ lst(){
     this.alrt="";
     this.prog=100;
   }
+  }
+  submit(){
+    this.data.submitdata(this.uname);
   }
 }

@@ -3,7 +3,7 @@
 <fieldset>
   <br><br>
   Enter your username:
-  <input type="text" placeholder="Username" [(ngModel)]="name" (blur)="username()"><br><br>
+  <input type="text" placeholder="Username" [(ngModel)]="uname" (blur)="username()"><br><br>
   <span id=span1>{{ alrt }} </span> <br>
   Enter your password:
   <input type="password" placeholder="Password" [(ngModel)]="pass" (blur)="password()"><br><br>
@@ -22,10 +22,11 @@
   </select><br><br>
   Progress:
   <progress value="{{prog}}" max="100"></progress>
-  <button routerLink = "Ashish">Submit</button>
+  <button (click)="submit()">Submit</button>
   </fieldset>
   <button id="fblogin" ng-click="FBLogin()">FACEBOOK</button>
 </div>
+<!--
 <script>
   window.fbAsyncInit = function() {
   FB.init({
@@ -104,7 +105,7 @@
 };*/
 
 </script>
-
+-->
 <div id="status"></div>
 <button onclick="login()">Login</button>
 
